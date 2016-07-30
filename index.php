@@ -69,9 +69,34 @@
             		obj.submit();
         		}
 			}
+		function submitcheck1(obj) {
+				if (document.getElementById('site_name1').value == '') {
+            		alert('必须输入站点名称！');
+           			document.getElementById('site_name1').focus();
+            		return false;
+        		} else if (document.getElementById('ftp_url1').value == '') {
+            		alert('必须输入Ftp地址！');
+            		document.getElementById('ftp_url1').focus();
+           			return false;
+        		}else if(document.getElementById('ftp_name1').value ==''){
+        			alert('必须输入Ftp账号！');
+            		document.getElementById('ftp_name1').focus();
+           			return false;
+        		}else if(document.getElementById('ftp_pwd1').value ==''){
+        			alert('必须输入Ftp密码！');
+            		document.getElementById('ftp_pwd1').focus();
+           			return false;
+        		}
+        		 else {
+            		obj.submit();
+        		}
+			}
 		function b_reset(){
 			document.getElementById('add_rs').reset();
+			document.getElementById('add_rs1').reset();
+			
 		}
+	
 </script>
 </head>
 <body>
@@ -171,20 +196,20 @@
 
 <!--添加表格-->
 			 <tr>
-			 <form id="add_rs" name="add_rs" action="addok.php" method="post">
+			 <form id="add_rs1" name="add_rs1" action="addok.php" method="post">
 			 <input type="hidden" name="id" value=""/>
 			 <td class="add_tr"><a class="add_ok" href="javascript:void(0);" onclick="b_reset()" >重置</a></td>
 			 	<!--<td><input type="reset" name="reset" value="重置"><input type="submit" name="submit" value="添加"></td>-->
-				<td><input class="site_name" type="text" name="site_name" id="site_name" required="required" ></td>
+				<td><input class="site_name" type="text" name="site_name" id="site_name1" required="required" ></td>
 				<td>
 				<select class="site_type" name="site_type">
 					<option value="PC">PC</option>
 					<option value="Mobile">Mobile</option>
 				</select>
 				</td>
-				<td><input class="ftp_url" type="text" name="ftp_url" id="ftp_url" required="required"></td>
-				<td><input class="ftp_name" type="text" name="ftp_name" id="ftp_name" required="required"></td>
-				<td><input class="ftp_pwd" type="text" name="ftp_pwd" id="ftp_pwd" required="required"></td>
+				<td><input class="ftp_url" type="text" name="ftp_url" id="ftp_url1" required="required"></td>
+				<td><input class="ftp_name" type="text" name="ftp_name" id="ftp_name1" required="required"></td>
+				<td><input class="ftp_pwd" type="text" name="ftp_pwd" id="ftp_pwd1" required="required"></td>
 				<td><input class="db_name" type="text" name="db_name"></td>
 				<td><input class="db_user" type="text" name="db_user"></td>
 				<td><input class="db_pwd" type="text" name="db_pwd"></td>
@@ -192,7 +217,7 @@
 				<td><input class="login_name" type="text" name="login_name"></td>
 				<td><input class="login_pwd" type="text" name="login_pwd"></td>
 				<td><input class="tips " type="text" name="tips"></td>
-				<td class="modi_time"><a class="add_ok" href="javascript:void(0)" onclick="submitcheck(document.add_rs)">添加</a></td>
+				<td class="modi_time"><a class="add_ok" href="javascript:void(0)" onclick="submitcheck1(document.add_rs1)">添加</a></td>
 				</form>
 			</tr>
 			<!--添加表格结束-->
