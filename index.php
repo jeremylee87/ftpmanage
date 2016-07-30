@@ -173,7 +173,7 @@
 			 <tr>
 			 <form id="add_rs" name="add_rs" action="addok.php" method="post">
 			 <input type="hidden" name="id" value=""/>
-			 <td class="add_tr"><a class="add_ok" href="javascript:freset(document.add_rs);" >重置</a></td>
+			 <td class="add_tr"><a class="add_ok" href="javascript:void(0);" onclick="b_reset()" >重置</a></td>
 			 	<!--<td><input type="reset" name="reset" value="重置"><input type="submit" name="submit" value="添加"></td>-->
 				<td><input class="site_name" type="text" name="site_name" id="site_name" required="required" ></td>
 				<td>
